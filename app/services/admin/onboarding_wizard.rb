@@ -103,7 +103,7 @@ module Admin
 
     def listing_created(setup_status, listing)
       if !setup_status[:listing] &&
-         listing
+         listing&.author&.is_marketplace_admin?
         :listing
       end
     end
